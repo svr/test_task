@@ -7,6 +7,8 @@ TestTask::Application.routes.draw do
   end
 
   root to: "main#index"
+  get 'index'          => "main#index"
+  get 'projects(/:id(/tasks))' => "main#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

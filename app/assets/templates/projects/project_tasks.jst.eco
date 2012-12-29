@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">
+      <%= @project.get('name') %>
+    </a>
+  </div>
+</div>
+<i class="icon-add"></i>
+<input id="task-name" type="text" placeholder="Start typing here to create task">
+<input type="button" class="btn btn-success add-task" value="Add task">
+<table>
+  <tbody>
+  </tbody>
+</table>

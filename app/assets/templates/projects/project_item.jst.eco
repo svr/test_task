@@ -1,0 +1,6 @@
+<%= @project.get('name') %>
+<span class="actions">
+  <a href="#" class="edit-project"   title="Edit project"><i class="icon-pencil"></i></a>
+  <a href="#" class="add-tasks"      title="Add tasks to project"><i class=" icon-plus"></i></a>
+  <a href="#" class="remove-project" title="Remove project"><i class="icon-remove"></i></a>
+</span>

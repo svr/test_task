@@ -1,0 +1,8 @@
+<td>
+  <input type="checkbox" id=<%="task-#{@task.id}"%> ></input>
+</td>
+<td>
+  <label for=<%="task-#{@task.id}"%> >
+    <%= @task.get('name') %>
+  </label>
+</td>

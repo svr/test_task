@@ -1,2 +1,6 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+<script>
+  TestTask.Preloaded.Projects = new TestTask.Collections.Projects({});
+  TestTask.Preloaded.Projects.reset(<%= @projects_json %>)
+</script>
+<div id="content">
+</div>
