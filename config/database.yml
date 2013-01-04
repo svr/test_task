@@ -17,9 +17,3 @@ test:
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
-
-development:
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: app-dev

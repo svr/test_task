@@ -1,3 +1,6 @@
-<h3>Project List</h3>
-<ul id="projects-list">
-</ul>
+<div id="projects">
+  <h3>Project List</h3>
+  <ul id="projects-list">
+  </ul>
+  <button type="button" class="new-project btn">Add Project</button>
+</div>

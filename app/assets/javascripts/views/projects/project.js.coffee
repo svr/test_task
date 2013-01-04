@@ -17,6 +17,8 @@ class TestTask.Views.ProjectItem extends Backbone.View
 
   editProject: (event) ->
     event.preventDefault()
+    console.log('Editing project')
+    @model.collection.trigger("project:edit", @model)
 
   removeProject: (event) ->
     event.preventDefault()

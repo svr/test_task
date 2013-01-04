@@ -13,6 +13,8 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require backbone-forms.min
+//= require backbone-forms-bootstrap
 //= require test_task
 //= require_tree ../templates
 //= require_tree ./models

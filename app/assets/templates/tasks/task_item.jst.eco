@@ -1,8 +1,25 @@
-<td>
+<td class="checkbox-td">
   <input type="checkbox" id=<%="task-#{@task.id}"%> ></input>
 </td>
-<td>
+<td class="empty">
+</td>
+<td class="task-name">
   <label for=<%="task-#{@task.id}"%> >
     <%= @task.get('name') %>
   </label>
+</td>
+<td>
+  <div class="actions">
+    <a class="handle-task" href="#">
+      <i class="icon-resize-vertical"></i>
+    </a>
+    |
+    <a class="edit-task" href="#" title="Edit task">
+      <i class="icon-pencil"></i>
+    </a>
+    |
+    <a class="remove-task" href="#" title="Remove task">
+      <i class="icon-trash"></i>
+    </a>
+  </div>
 </td>
