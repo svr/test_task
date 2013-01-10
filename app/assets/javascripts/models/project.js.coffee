@@ -7,10 +7,11 @@ class TestTask.Models.Project extends Backbone.Model
     @tasks.url = @url() + '/tasks'
     templates = {
        form_buttons: '<div class="control-group">
-                      <div class="controls">
-                      <button class="cancel btn">Cancel</button>
-                      <button class="save btn btn-success" type="submit">Save</button>
-                      </div></div'
+                        <div class="controls">
+                          <button class="cancel btn">Cancel</button>
+                          <button class="save btn btn-success" type="submit">Save</button>
+                        </div>
+                      </div>'
     }
     Backbone.Form.setTemplates(templates)
 

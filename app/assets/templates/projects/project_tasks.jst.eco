@@ -1,13 +1,15 @@
 <div class="navbar">
   <div class="navbar-inner">
-    <img src="/assets/notepad-icon.png" class="pull-left">
+    <i class="icon-list-alt"></i>
     <a class="brand" href="/">
       <%= @project.get('name') %>
     </a>
   </div>
 </div>
-<img src="/assets/add.png" class="pull-left">
-  <div class="input-append">
+  <div class="input-prepend input-append">
+    <span class="add-on">
+     <img src="/assets/add.png" class="pull-left">
+    </span>
     <input id="task-name" class="input-xxlarge span2" type="text" placeholder="Start typing here to create task">
     <button type="button" class="btn btn-success add-task">Add task</button>
   </div>
