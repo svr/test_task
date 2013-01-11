@@ -11,7 +11,6 @@ class TestTask.Views.ProjectsIndex extends Backbone.View
   events:
     'click .new-project' : 'newProjectForm'
     'submit form'        : 'createProject'
-    #'click .save'       : 'createProject'
     'click .cancel'      : 'render'
 
   appendProject: (project) -> 
@@ -20,18 +19,20 @@ class TestTask.Views.ProjectsIndex extends Backbone.View
 
   newProjectForm: (event) ->
     event.preventDefault()
-    @renderProjectForm( new TestTask.Models.Project() )
-    #@project_form = new Backbone.Form(model: @new_project)
-    #@$el.find('#projects').empty().append('<div>Add new project</div>').append(@new_project_form.render().el)
+    @renderProjectForm( new TestTask.Models.Project(), 'Creating new project' )
 
-  renderProjectForm: (project) ->
+  renderProjectForm: (project, message) ->
+    if(message?)
+      message_html='<h3>'+message+'</h3>'
+    else
+      message_html='<h3>Editing project</h3>'
+
     @project = project
     @project_form = new Backbone.Form(model: @project)
-    @$el.find('#projects').empty().append(@project_form.render().el)
+    @$el.find('#projects').empty().append(message_html).append(@project_form.render().el)
 
   createProject: (event) ->
     event.preventDefault()
-    console.log('saving project')
     errors = @project_form.commit();
     if _.isEmpty errors
       @project.save({},  success: =>

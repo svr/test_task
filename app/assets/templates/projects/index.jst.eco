@@ -1,6 +1,6 @@
-<div id="projects">
+<div id="projects" class="bs-docs-sidebar">
   <h3>Project List</h3>
-  <ul id="projects-list">
+  <ul id="projects-list" class="nav nav-list bs-docs-sidenav">
   </ul>
-  <button type="button" class="new-project btn">Add Project</button>
+  <button type="button" class="new-project btn btn-success pull-right">Add Project</button>
 </div>

@@ -14,6 +14,7 @@ class TestTask.Views.ProjectTask extends Backbone.View
     'click .cancel'   : 'render'
     'click .save'     : 'saveTask'
     'submit'          : 'saveTask'
+    'click .back'     : 'goToProjects'
 
   addTask: (event) ->
     event.preventDefault()
@@ -40,11 +41,15 @@ class TestTask.Views.ProjectTask extends Backbone.View
 
   editTaskForm: (task) ->
     @task_form = new Backbone.Form(model: task)
-    @$el.empty().append(@task_form.render().el)
+    @$el.empty().append('<h2>Editing task ' + task.get('name') + '</h2>').append(@task_form.render().el)
 
   appendTask: (project) ->
     item_view = new @itemView(model: project)
     @itemViewEl.append(item_view.render().el)
+
+  goToProjects: (event) ->
+    event.preventDefault()
+    TestTask.RouteInstances.ProjectsRoute.navigate('/', true)
 
   render: ->
     @$el.empty().append(@template(project: @model))

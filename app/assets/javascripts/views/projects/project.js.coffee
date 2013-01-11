@@ -10,18 +10,21 @@ class TestTask.Views.ProjectItem extends Backbone.View
     'click .add-tasks'      : 'addTasks'
     'click .edit-project'   : 'editProject'
     'click .remove-project' : 'removeProject'
+    'click a'               : 'addTasks'
 
   addTasks: (event) ->
     event.preventDefault()
+    event.stopPropagation();
     TestTask.RouteInstances.ProjectsRoute.navigate('/projects/' + @model.id, true)
 
   editProject: (event) ->
     event.preventDefault()
-    console.log('Editing project')
+    event.stopPropagation();
     @model.collection.trigger("project:edit", @model)
 
   removeProject: (event) ->
     event.preventDefault()
+    event.stopPropagation();
     if confirm('Delete project ' + @model.get('name') + '?')
       @model.destroy()
       @remove()

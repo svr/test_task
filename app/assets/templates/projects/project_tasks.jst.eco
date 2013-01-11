@@ -1,19 +1,20 @@
-<div class="navbar">
-  <div class="navbar-inner">
-    <i class="icon-list-alt"></i>
-    <a class="brand" href="/">
-      <%= @project.get('name') %>
-    </a>
-  </div>
+<div class="nav_header">
+  <span class="brand">
+    <%= @project.get('name') %>
+  </span>
 </div>
+<div class="input-wrap">
   <div class="input-prepend input-append">
     <span class="add-on">
      <img src="/assets/add.png" class="pull-left">
     </span>
-    <input id="task-name" class="input-xxlarge span2" type="text" placeholder="Start typing here to create task">
+    <input id="task-name" class="input-xxlarge" type="text" placeholder="Start typing here to create task...">
     <button type="button" class="btn btn-success add-task">Add task</button>
   </div>
+</div>
 <table class="project-tasks-tbl">
   <tbody>
   </tbody>
 </table>
+
+<a href="/" class="back"><i class="icon-arrow-left"></i>Back to projects</a>
