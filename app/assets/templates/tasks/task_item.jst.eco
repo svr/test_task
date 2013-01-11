@@ -1,5 +1,9 @@
 <td class="checkbox-td">
-  <input type="checkbox" id=<%="task-#{@task.id}"%> ></input>
+  <% checked = '' %>
+  <% if @task.get('status') == 'done': %>
+    <% checked = 'checked' %>
+  <% end %>
+  <input type="checkbox" id=<%="task-#{@task.id}"%>  <%= checked %> ></input>
 </td>
 <td class="empty">
 </td>
@@ -7,6 +11,11 @@
   <label for=<%="task-#{@task.id}"%> >
     <%= @task.get('name') %>
   </label>
+</td>
+<td>
+<% if(@task.get('status') == 'done'): %>
+  <i class="icon-ok"></i>
+<% end %>
 </td>
 <td>
   <div class="actions">

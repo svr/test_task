@@ -3,6 +3,7 @@ class TestTask.Models.Task extends Backbone.Model
   #Tomorrow date, in 24 hours 60 minutes 60 seconds 1000 milliseconds
     deadline_at: new Date(new Date().getTime() + 24 * 60 * 60 * 1000)  
     priority: 0
+    status: 'pending'
   schema:
     name: 
       type: 'Text', 
@@ -35,4 +36,9 @@ class TestTask.Models.Task extends Backbone.Model
                       </div>'
     
     Backbone.Form.setTemplates(templates)
-
+  
+  toggleStatus: ->
+    if(@get('status') == 'pending')
+      @save('status', 'done', {wait: true})
+    else
+      @save('status', 'pending', {wait: true})

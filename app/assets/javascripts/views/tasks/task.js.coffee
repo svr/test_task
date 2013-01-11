@@ -3,6 +3,7 @@ class TestTask.Views.TaskItem extends Backbone.View
   tagName: 'tr'
 
   initialize: ->
+    this.className = @model.get('status')
     _.bindAll(this, 'render')
     @model.on('change',  @render, this)
     @model.on('destroy', @remove, this)
@@ -10,6 +11,7 @@ class TestTask.Views.TaskItem extends Backbone.View
   events:
     'click .remove-task' : 'removeTask'
     'click .edit-task'   : 'editTask'
+    'click input'        : 'toggleStatus'
 
   removeTask: (event) ->
     event.preventDefault()
@@ -20,6 +22,10 @@ class TestTask.Views.TaskItem extends Backbone.View
   editTask: (event) ->
     event.preventDefault()
     @model.collection.trigger('edit_form', @model)
+
+  toggleStatus: (event) ->
+    event.preventDefault()
+    @model.toggleStatus()
       
   render: -> 
     @$el.empty().append(@template(task: @model))
