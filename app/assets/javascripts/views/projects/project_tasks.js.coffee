@@ -49,7 +49,8 @@ class TestTask.Views.ProjectTask extends Backbone.View
 
   goToProjects: (event) ->
     event.preventDefault()
-    TestTask.RouteInstances.ProjectsRoute.navigate('/', true)
+    this.unbind();
+    TestTask.RouteInstances.ProjectsRoute.navigate('/', {trigger: true})
 
   render: ->
     @$el.empty().append(@template(project: @model))

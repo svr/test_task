@@ -14,12 +14,12 @@ class TestTask.Views.ProjectItem extends Backbone.View
 
   addTasks: (event) ->
     event.preventDefault()
-    event.stopPropagation();
-    TestTask.RouteInstances.ProjectsRoute.navigate('/projects/' + @model.id, true)
+    event.stopPropagation()
+    TestTask.RouteInstances.ProjectsRoute.navigate('/projects/' + @model.id, {trigger: true})
 
   editProject: (event) ->
     event.preventDefault()
-    event.stopPropagation();
+    event.stopPropagation()
     @model.collection.trigger("project:edit", @model)
 
   removeProject: (event) ->

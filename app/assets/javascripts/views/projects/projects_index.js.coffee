@@ -10,7 +10,8 @@ class TestTask.Views.ProjectsIndex extends Backbone.View
 
   events:
     'click .new-project' : 'newProjectForm'
-    'submit form'        : 'createProject'
+    'submit form'        : 'saveProject'
+    'click .save'        : 'saveProject'
     'click .cancel'      : 'render'
 
   appendProject: (project) -> 
@@ -31,7 +32,7 @@ class TestTask.Views.ProjectsIndex extends Backbone.View
     @project_form = new Backbone.Form(model: @project)
     @$el.find('#projects').empty().append(message_html).append(@project_form.render().el)
 
-  createProject: (event) ->
+  saveProject: (event) ->
     event.preventDefault()
     errors = @project_form.commit();
     if _.isEmpty errors
